@@ -1,0 +1,33 @@
+<table id="customers">
+    <tr class="tr_header unselectable">
+        <th id="news_date" class="cursor_pointer" appSortParams (param)="setSortParams($event)" [class.active_sort]="column === 'isoDate'">
+          Дата/Время
+            <i class="fa fa-sort" *ngIf="column !== 'isoDate'"></i>
+            <i class="fa fa-arrow-up" *ngIf="column === 'isoDate' && direction"></i>
+            <i class="fa fa-arrow-down" *ngIf="column === 'isoDate' && !direction"></i>
+        </th>
+        <th id="news_image">Изображение</th>
+        <th id="news_title" class="cursor_pointer" appSortParams (param)="setSortParams($event)" [class.active_sort]="column === 'title'">
+            Название новости
+            <i class="fa fa-sort" *ngIf="column !== 'title'"></i>
+            <i class="fa fa-arrow-up" *ngIf="column === 'title' && direction"></i>
+            <i class="fa fa-arrow-down" *ngIf="column === 'title' && !direction"></i>
+        </th>
+        <th id="news_snippet">Краткое описание</th>
+        <th id="news_link">Ссылка на новость</th>
+    </tr>
+    <tr class="tr_content" *ngFor="let n of news | sort:direction:column; let i = index" [id]="i" colorizeOnClick DoubleClick [newsfeed]="news">
+        <td>{{n.isoDate | date: 'd.MM.yyyy, H:mm'}}</td>
+        <td>
+            <span *ngIf="n.enclosure && n.enclosure.url && n.enclosure.type === 'image/jpeg'">
+                <img width="300" [src]="n.enclosure.url">
+            </span>
+        </td>
+        <td>{{ n.title }}</td>
+        <td>{{ n.contentSnippet }}</td>
+        <td>
+            <a [href]="n.link" target="blank">{{ n.link }}</a>
+        </td>
+    </tr>
+</table>
+

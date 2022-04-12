@@ -1,0 +1,43 @@
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+   
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+    
+  }
+
+  .cursor_pointer {
+    cursor: pointer;
+  }
+
+  .tr_content {
+  height: 169px;
+  }
+
+  .painted {
+    background-color: #04AA6D;
+  }
+
+  .active_sort {
+    background-color: #27a3eb !important;
+  }
+
+  .unselectable {
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }

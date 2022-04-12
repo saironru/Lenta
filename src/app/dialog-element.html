@@ -1,0 +1,9 @@
+<mat-icon mat-icon-button class="close-icon" color="black" mat-dialog-close>close</mat-icon>
+<div class="card">
+  <small>{{ data.isoDate | date: "H:mm, d LLLL yyyy" }}</small>
+  <h1 mat-dialog-title>{{ data.title }}</h1>
+  <span class="full_image_span" *ngIf="data.enclosure && data.enclosure.url && data.enclosure.type === 'image/jpeg'" >
+    <img class="full_image" [src]="data.enclosure.url" [alt]="data.title">
+  </span>
+  <div mat-dialog-content>{{ data.content }}</div>
+</div>

@@ -1,0 +1,37 @@
+.full_image_span {
+    margin: 30px auto;
+    display: block;
+}
+
+.full_image {
+    width: 100%;
+}
+
+
+  
+  .close-icon {
+    transition: 1s ease-in-out;
+    float: right;
+    top:-24px;
+    right:-24px;
+    cursor: pointer;
+  }
+  
+  .close-icon:hover {
+    transform: rotate(180deg);
+    color: red;
+  }
+  
+  ::ng-deep .icon-outside .close-button{
+    float: right;
+    top:-52px;
+    right:-52px;
+  }
+  
+  ::ng-deep .icon-outside .mat-dialog-container {
+   overflow: unset
+  }
+
+.card {
+    padding-right: 30px;
+}
